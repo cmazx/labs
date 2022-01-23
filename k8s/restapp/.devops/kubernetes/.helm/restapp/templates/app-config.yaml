@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: restapp-config
+  namespace: default
+data:
+  HOST: {{ .Values.app.host | quote}}
+  PORT: {{ .Values.app.port | quote}}
+  POSTGRES_DB: {{ .Values.postgres.db | quote}}
+  POSTGRES_PORT: {{ .Values.postgres.port | quote}}
+  POSTGRES_HOST: {{ .Values.postgres.host | quote}}
+  POSTGRES_SSL_MODE: {{ .Values.postgres.sqlmode | quote }}
+  POSTGRES_TIMEZONE: {{ .Values.postgres.timezone | quote }}

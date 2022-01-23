@@ -1,0 +1,14 @@
+postgresqlPassword: dev
+initdbPassword: dev
+initdbScripts:
+   my_init_script.sql: |
+     create database restapp;
+     create user restapp with encrypted password 'restapp';
+     grant all privileges on database restapp to restapp;
+#  my_init_script.sh: |
+#    #!/bin/sh
+#    psql -c 'create user restapp'
+#    psql -c 'create user restapp with encrypted password \'restapp\''
+#    psql -c 'grant all privileges on database mydb to restapp'
+image:
+  debug: true
